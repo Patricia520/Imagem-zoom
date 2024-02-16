@@ -1,0 +1,25 @@
+body{
+    /* cor de fundo da imagem */
+    background-color: rgb(212, 51, 172);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+}
+/* container para borda da imagem */
+#container{
+    /* none= nenhum */
+    box-shadow:  none;
+    height: 500px;
+    width: 500px;
+    overflow: hidden;
+}
+
+img{
+    /* colocar a imagem no centro da tela */
+    transform-origin: center;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}

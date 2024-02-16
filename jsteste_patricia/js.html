@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exemplo JavaScript</title>
+
+</head>
+
+
+<body>
+    <!-- Div para fazer um container -->
+    <div id="container">
+        <!-- inserir a imagem -->
+        <img src="/img/images-removebg-preview (3).png" alt="">
+    </div>
+
+    <!-- Abrir a tag do JS, script -->
+    <script>
+        // Colocar a variavel constante
+         const container = document.getElementById("container");
+        const img = document.querySelector("img");
+    
+// o código está adicionando um evento de escuta ao elemento container.
+    container.addEventListener("mousemove", (e) => {
+
+    // essas duas constantes representa o cursor do mouse em relaçao á borda esquerda do container
+    const x = e.clientX - e.target.offsetLeft;
+
+     // a constante y representa a posição do cursor do mouse em relação à borda superior do elemento container.
+    const y = e.clientY - e.target.offsetTop;
+
+    // Console.log como um teste(não aparece para o usuario)
+    console.log(x,y);
+
+    img.style.transformOrigin = `${x}px ${y}px`;
+    img.style.transform = "scale(2)";
+})
+
+    // esse codigo vai ter o seu ponto de referência de transformação definido como as coordenadas específicas, no caso o x e o yem relação ao seu tamanho.
+    container.addEventListener("mouseleave", ()=>{
+        img.style.transformOrigin="center";
+        img.style.transform="scale(1)";
+    })
+    
+    </script>
+
+    
+
+</body>
+</html>
